@@ -7,5 +7,6 @@ class Subscription < ApplicationRecord
 
   def ensure_expected_status_update
     raise InvalidStatusChanges, 'trying to cancel non paid subscription' if status == 'canceled' && status_was != "paid"
+    raise InvalidStatusChanges, 'already canceled subscription' if status_was == 'canceled'
   end
 end
