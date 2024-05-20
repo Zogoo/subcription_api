@@ -15,10 +15,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_203651) do
   enable_extension "plpgsql"
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string "name"
+    t.string "subscription_id", null: false
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_subscriptions_on_subscription_id", unique: true
   end
 
 end

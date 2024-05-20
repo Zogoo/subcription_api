@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :subscription do
-    name { "MyString" }
-    status { 1 }
+    sequence(:subscription_id) { |id| "sub_#{id}" }
+    status { :unpaid }
   end
 end
