@@ -19,3 +19,8 @@ There are several areas that can be improved if needed:
 2. Creating a service layer for separated event handlers.
 3. Implementing strong parameters for strict event object validation.
 4. Since events can be received simultaneously by different threads, use `with_lock` to avoid race conditions, or utilize the [`idempotency_key`](https://docs.stripe.com/api/idempotent_requests) to ensure idempotency.
+
+# Further consideration
+
+1. Stripe allows to cancel subscription that has state `upaid` (subscription no paid invoice).
+2. Test case can be improved more corner cases like invalid structure of request params
