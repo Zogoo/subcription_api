@@ -1,7 +1,7 @@
 class Subscription < ApplicationRecord
   InvalidStatusChanges = Class.new(StandardError)
 
-  enum :status, [:unpaid, :paid, :canceled], _default: :unpaid
+  enum :status, [:unpaid, :paid, :canceled], default: :unpaid
 
   before_update :ensure_expected_status_update
 
