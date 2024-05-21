@@ -1,8 +1,8 @@
 module Webhooks
   class StripeController < ApplicationController
-    rescue_from Subscription::InvalidStatusChanges, with: log_and_respond_no_content
-    rescue_from ActiveRecord::RecordInvalid, with: log_and_respond_no_content
-    rescue_from ActiveRecord::RecordNotFound, with: log_and_respond_no_content
+    rescue_from Subscription::InvalidStatusChanges, with: :log_and_respond_no_content
+    rescue_from ActiveRecord::RecordInvalid, with: :log_and_respond_no_content
+    rescue_from ActiveRecord::RecordNotFound, with: :log_and_respond_no_content
 
     def create
       handle_event
