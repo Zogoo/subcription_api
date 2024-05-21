@@ -10,6 +10,12 @@
    rails db:prepare
    ```
 
+3. [Setup the Stripe CLI for local environment](https://docs.stripe.com/stripe-cli)
+   `stripe listen --forward-to localhost:3000/webhooks/stripe/create`
+
+4. Change subscription in the Sripe UI.
+
+
 # About This Project
 
 This project is a Proof of Concept (POC) for handling Stripe subscription webhooks.
